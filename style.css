@@ -1,0 +1,239 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    /* background: rgb(26, 24, 24); */
+    background: radial-gradient(#333,#000);
+
+}
+.app{
+    font-family: "Poppins" , sans-serif;
+    width: min(95vw, 31.25em);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 1.875em;
+}
+.container{
+    padding: 2em 2.5em;
+    background-color: #f1f8fb;
+    box-shadow: 0 1em 2em rgba(179, 169, 169, 0.3);
+    border-radius: 0.8em;
+}
+#wrapper{
+    position: relative;
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 1em;
+}
+#wrapper input{
+    width: 100%;
+    background-color: transparent;
+    color: #111111;
+    font-size: 0.9em;
+    border: none;
+    border-bottom: 2px solid #d1d3d4;
+    padding: 1em 0.5em;
+}
+#wrapper input:focus{
+    outline: none;
+    border-color: brown;
+}
+#wrapper button{
+    position: relative;
+    border-radius: 0.5em;
+    font-weight: 500;
+    font-size: 1em;
+    background-color: brown;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+#tasks{
+    margin-top: 1em;
+    border-radius: 0.5em;
+    width: 100%;
+    position: relative;
+    padding: 1em 0.5em;
+}
+.task{
+    background-color: #ffffff;
+    padding: 0.8em 1em;
+    display: grid;
+    grid-template-columns: 1fr 8fr 2fr 2fr;
+    gap: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.5em 1em rgb(0, 0, 0, 0.05);
+    align-items: center;
+    cursor: pointer;
+}
+.task:not(:first-child) {
+    margin-top: 1em;
+}
+.task input[type="checkbox"] {
+    position: relative;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid #e1e1e1;
+}
+.task input[type="checkbox"]:before {
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.task input[type="checkbox"]:checked {
+    background-color: brown;
+    border-color: brown;
+}
+
+.task input[type="checkbox"]:checked:before {
+    position: absolute;
+    content: "\f00c";
+    color: #ffffff;
+    font-size: 0.8em;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.task span {
+    font: 0.9em;
+    font-weight: 400;
+    word-break: break-all;
+}
+.task button {
+    color: #ffffff;
+    width: 100%;
+    padding: 1em 0;
+    border-radius: 0.5em;
+    border: none;
+}
+.edit {
+    background-color: rgb(243, 36, 0);
+}
+.delete {
+    background-color: #eea010;
+}
+#pending-tasks span {
+    color:  rgba(168, 79, 6, 0.842);
+}
+.completed {
+    text-decoration: line-through;
+    color: #a0a0a0;
+}
+    #error{
+    text-align: center;
+    background-color: #ffffff;
+    color: #ff5c5c;
+    margin-top: 1.5em;
+    padding: 1em 0;
+    border-radius: 0.8em;
+    display: none;
+}
+
+
+/* leaves */
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+section .set{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+section .set img {
+    position: absolute;
+    display: block;
+}
+section .set img:nth-child(1){
+    left: 20%;
+    animation: animate 15s linear infinite;
+    animation-delay: -7s;
+}
+section .set img:nth-child(2){
+    left: 50%;
+    animation: animate 20s linear infinite;
+    animation-delay: -5s;
+}
+section .set img:nth-child(3){
+    left: 70%;
+    animation: animate 20s linear infinite;
+    animation-delay: -0s;
+}
+section .set img:nth-child(4){
+    left: 0%;
+    animation: animate 15s linear infinite;
+    animation-delay: -5s;
+}
+section .set img:nth-child(5){
+    left: 85%;
+    animation: animate 18s linear infinite;
+    animation-delay: -10s;
+}
+section .set img:nth-child(6){
+    left: 0%;
+    animation: animate 12s linear infinite;
+}
+section .set img:nth-child(7){
+    left: 15%;
+    animation: animate 14s linear infinite;
+}
+section .set img:nth-child(8){
+    left: 60%;
+    animation: animate 15s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        opacity:0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+    }
+    10%{
+        opacity: 1;
+    }
+    20%{
+        transform: translateX(-20px) rotate(45deg);
+    }
+    40%{
+        transform: translateX(-20px) rotate(90deg);
+    }
+    60%{
+        transform: translateX(20px) rotate(180deg);
+    }
+    80%{
+        transform: translateX(-20px) rotate(180deg);
+    }
+    100%{
+        top: 110%;
+        transform: translateX(-20px) rotate(225deg);
+    }
+}
+
+.set2{
+    transform: scale(2) rotateY('180deg');
+    filter: blur(2px);
+}
+.set3{
+    transform: scale(0.8) rotateY('180deg');
+    filter: blur(4px);
+}
