@@ -30,7 +30,7 @@ const addTask = () => {
     </button>
     </div>`;
 
-    taskContainer.insertAdjacentHTML("beforeend", task);
+    tasksContainer.insertAdjacentHTML("beforeend", task);
 
     const deleteButtons = document.querySelectorAll(".delete");
     deleteButtons.forEach((button) => {
@@ -57,7 +57,6 @@ const addTask = () => {
     tasksCheck.forEach((checkBox) => {
         checkBox.onchange = () => {
             checkBox.nextElementSibling.classList.toggle("completed");
-            saveData()
             if (checkBox.checked) {
                 taskCount -= 1;
             } else {
