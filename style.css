@@ -20,7 +20,7 @@ body{
 }
 .container{
     padding: 2em 2.5em;
-    background-color: #f8f4f4da;
+    background-color: #f8f4f4c7;
     backdrop-filter: blur(7px);
     /* box-shadow: 0 1em 2em rgba(179, 169, 169, 0.3); */
     border-radius: 0.8em;
