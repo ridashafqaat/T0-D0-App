@@ -11,7 +11,7 @@ body{
 }
 .app{
     font-family: "Poppins" , sans-serif;
-    width: min(95vw, 31.25em);
+    width: min(95vw, 41.25em);
     position: absolute;
     margin: auto;
     left: 0;
@@ -20,8 +20,9 @@ body{
 }
 .container{
     padding: 2em 2.5em;
-    background-color: #f1f8fb;
-    box-shadow: 0 1em 2em rgba(179, 169, 169, 0.3);
+    background-color: #f8f4f4da;
+    backdrop-filter: blur(7px);
+    /* box-shadow: 0 1em 2em rgba(179, 169, 169, 0.3); */
     border-radius: 0.8em;
 }
 #wrapper{
@@ -43,8 +44,10 @@ body{
     outline: none;
     border-color: brown;
 }
-#wrapper button{
+button{
     position: relative;
+    height: 48px;
+    width: 90px;
     border-radius: 0.5em;
     font-weight: 500;
     font-size: 1em;
@@ -54,6 +57,10 @@ body{
     color: #ffffff;
     cursor: pointer;
 }
+#wrapper #delete-btn{
+    top: 2px;
+}
+
 #tasks{
     margin-top: 1em;
     border-radius: 0.5em;
